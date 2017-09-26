@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -93,11 +94,35 @@ public class Steps  {
 	@When("^Create a new Zorgfile$")
 	public void create_a_new_zorgfile() throws Throwable {
 
-		Thread.sleep(5000);
-		NavigerenObjecten.SelectNieuw(driver).click();
-	//	NavigerenObjecten.Zoekveld(driver).click();
-		   	}
+		Thread.sleep(3000);
+		NavigerenObjecten.SelectNew(driver).click();
+		driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']")).click();
+	//	LoginObjecten.NameEntity(driver).sendKeys(NameEntity);
+		
 	
+		}
+			  
+	@When("^in entity nameentity \"([^\"]*)\"$")
+	public void in_entity_NameEntity (String NameEntity) throws Throwable {
+
+		Thread.sleep(1500);
+		driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']")).click();
+		LoginObjecten.NameEntity(driver).sendKeys(NameEntity);
+		LoginObjecten.NameEntity(driver).sendKeys(Keys.RETURN);
+		//LoginObjecten.NameProject(driver).sendKeys(NameProject);
+	
+		}
+	
+	@When("^with name nameproject \"([^\"]*)\"$")
+	public void with_name_NameProject (String NameProject) throws Throwable {
+
+		Thread.sleep(1500);
+		driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']")).click();
+		//LoginObjecten.NameEntity(driver).sendKeys(NameEntity);
+		//LoginObjecten.NameEntity(driver).sendKeys(Keys.RETURN);
+		LoginObjecten.NameProject(driver).sendKeys(NameProject);
+	
+		}
 	
 	@When("^Importeer saldibalans$")
 	public void importeer_saldibalans() throws Throwable {
@@ -106,12 +131,12 @@ public class Steps  {
 	
 		driver.findElement(By.partialLinkText("Saldibalans")).click();
 		
-		Thread.sleep(3000);
+		Thread.sleep(1500);
 		NavigerenObjecten.SelectImport(driver);
 		NavigerenObjecten.SelectImportKlik(driver).click();
 		NavigerenObjecten.SelectImportCSV(driver).click();
-			
-
+	//	NavigerenObjecten.SelectFile(driver).click();
+		Thread.sleep(1500);
 	}
 	
 	@When("^Select the Samenstellen module$")

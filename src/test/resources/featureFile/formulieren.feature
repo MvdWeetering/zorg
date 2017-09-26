@@ -12,6 +12,7 @@ Feature: vullen formulieren
     When I type username "katinka.karel@caseware.nl" and password "WelkomKatinka01"
     And Select the Zorg module
     And open the Project "test2"
+    And Sluit browser
     
      Examples: 
       | Id | Browser  |
@@ -37,12 +38,13 @@ Feature: vullen formulieren
     Given I want to login with browser <Browser>
     When I type username "katinka.karel@caseware.nl" and password "WelkomKatinka01"
     And Select the Zorg module
-    And Create a new Zorgfile
+    And Create a new Zorgfile 
+    And in entity "Katinka"
+    #And with name "Kat+date"
+    #And open the Project "katimka"
     #And Importeer saldibalans
-    	And Sluit browser
-		 
-
-      
+   	#And Sluit browser
+		       
      Examples: 
       | Id | Browser  |
       |  1 | "Chrome" |
