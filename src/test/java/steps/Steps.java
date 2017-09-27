@@ -106,7 +106,7 @@ public class Steps  {
 	public void in_entity_NameEntity (String NameEntity) throws Throwable {
 
 		Thread.sleep(1500);
-		driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']")).click();
+		NavigerenObjecten.SelectEntity(driver).click();
 		LoginObjecten.NameEntity(driver).sendKeys(NameEntity);
 		LoginObjecten.NameEntity(driver).sendKeys(Keys.RETURN);
 		//LoginObjecten.NameProject(driver).sendKeys(NameProject);

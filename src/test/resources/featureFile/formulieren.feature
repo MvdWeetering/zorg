@@ -39,11 +39,11 @@ Feature: vullen formulieren
     When I type username "katinka.karel@caseware.nl" and password "WelkomKatinka01"
     And Select the Zorg module
     And Create a new Zorgfile 
-    And in entity "Katinka"
-    #And with name "Kat+date"
+    And in entity nameentity "Katinka"
+    And with name nameproject "Kat+date"
     #And open the Project "katimka"
     #And Importeer saldibalans
-   	#And Sluit browser
+   	And Sluit browser
 		       
      Examples: 
       | Id | Browser  |

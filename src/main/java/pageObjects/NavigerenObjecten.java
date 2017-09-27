@@ -69,8 +69,8 @@ public static WebElement SelectFile(WebDriver driver){
 */ 
 
 public static WebElement SelectEntity(WebDriver driver){	
-	WebElement parent = driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']"));
-	element = parent.findElement(By.cssSelector("[title='Nieuw']"));
+	//WebElement parent = driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']"));
+	element = driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']"));
 	return element;
 }
 
