@@ -15,12 +15,12 @@ import codebase.*;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
+import pageObjects.CreateZorgFileObjecten;
 import pageObjects.LoginObjecten;
 import pageObjects.NavigerenObjecten;
 
 public class Steps  {
-
+		
 	/*
 	driver.findElement(By.id("idxdt9tz5o")).clear();
 	driver.findElement(By.id("idxdt9tz5o")).sendKeys("Katinka's test");
@@ -107,7 +107,7 @@ public class Steps  {
 	public void in_entity_NameEntity (String NameEntity) throws Throwable {
 
 		Thread.sleep(1500);
-		NavigerenObjecten.SelectEntity(driver).click();
+		CreateZorgFileObjecten.SelectEntity(driver).click();
 		LoginObjecten.NameEntity(driver).sendKeys(NameEntity);
 		LoginObjecten.NameEntity(driver).sendKeys(Keys.RETURN);
 		
@@ -123,10 +123,9 @@ public class Steps  {
 		
 		Thread.sleep(1500);
 		LoginObjecten.NameProject(driver).sendKeys(Voorbeeld);
-		//NavigerenObjecten.SaveProject(driver).click();
-		driver.findElement(By.xpath("//button[contains(.,'Opslaan')]")).click();
-	
+		LoginObjecten.NameProject(driver).sendKeys(Keys.RETURN);
 		}
+
 	
 	@When("^Importeer saldibalans$")
 	public void importeer_saldibalans() throws Throwable {
@@ -136,9 +135,9 @@ public class Steps  {
 		driver.findElement(By.partialLinkText("Saldibalans")).click();
 		
 		Thread.sleep(1500);
-		NavigerenObjecten.SelectImport(driver);
-		NavigerenObjecten.SelectImportKlik(driver).click();
-		NavigerenObjecten.SelectImportCSV(driver).click();
+		CreateZorgFileObjecten.SelectImport(driver);
+		CreateZorgFileObjecten.SelectImportKlik(driver).click();
+		CreateZorgFileObjecten.SelectImportCSV(driver).click();
 	//	NavigerenObjecten.SelectFile(driver).click();
 		Thread.sleep(1500);
 	}
@@ -149,5 +148,12 @@ public class Steps  {
 		driver.quit();	
 		 
 	}
+	
+	/*In de Step verwerken. 
+		
+		Robot robot = new Robot();
+
+	robot.keyPress(KeyEvent.VK_ENTER);
+*/
 }
 

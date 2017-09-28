@@ -30,7 +30,7 @@ Feature: vullen formulieren
     And with name nameproject "Kat+date"
     #And open the Project "katimka"
     #And Importeer saldibalans
-   	#And Sluit browser
+   #	And Sluit browser
 		       
      Examples: 
       | Id | Browser  |

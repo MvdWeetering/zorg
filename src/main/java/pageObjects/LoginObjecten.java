@@ -2,7 +2,7 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import java.util.Date;       
+      
 
 
 
@@ -36,6 +36,5 @@ public class LoginObjecten {
 		return element;
 	}
 		
-
 
 }
