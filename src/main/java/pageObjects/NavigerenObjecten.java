@@ -69,8 +69,13 @@ public static WebElement SelectFile(WebDriver driver){
 */ 
 
 public static WebElement SelectEntity(WebDriver driver){	
-	//WebElement parent = driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']"));
-	element = driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']"));
+		element = driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']"));
+	return element;
+}
+
+public static WebElement SaveProject(WebDriver driver){	
+	WebElement parent = driver.findElement(By.className("GJJ2145DK4 GJJ2145DH5 GJJ2145DCID"));
+	element = parent.findElement(By.partialLinkText("Opslaan"));
 	return element;
 }
 

@@ -27,17 +27,15 @@ public class LoginObjecten {
 	}
 
 	public static WebElement NameEntity(WebDriver driver){	
-		//WebElement parent = driver.findElement(By.cssSelector(""));
 		element = driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']"));
 		return element;
 	}
    
 	public static WebElement NameProject(WebDriver driver){	
-		WebElement parent = driver.findElement(By.cssSelector(""));
-		element = parent.findElement(By.cssSelector(""));
+		element = driver.findElement(By.cssSelector("*[class^='GJJ2145DODB']"));
 		return element;
 	}
 		
-	Date date = new Date();
-	
+
+
 }

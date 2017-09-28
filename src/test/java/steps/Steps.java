@@ -3,6 +3,7 @@ package steps;
 
 import java.sql.Driver;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -109,18 +110,21 @@ public class Steps  {
 		NavigerenObjecten.SelectEntity(driver).click();
 		LoginObjecten.NameEntity(driver).sendKeys(NameEntity);
 		LoginObjecten.NameEntity(driver).sendKeys(Keys.RETURN);
-		//LoginObjecten.NameProject(driver).sendKeys(NameProject);
+		
 	
 		}
 	
 	@When("^with name nameproject \"([^\"]*)\"$")
 	public void with_name_NameProject (String NameProject) throws Throwable {
-
+	
+		Date date = new Date();	
+		String Voorbeeld;	
+		Voorbeeld = "Kat" + date;
+		
 		Thread.sleep(1500);
-		driver.findElement(By.cssSelector("[placeholder='Begin met typen om resultaten te zien.']")).click();
-		//LoginObjecten.NameEntity(driver).sendKeys(NameEntity);
-		//LoginObjecten.NameEntity(driver).sendKeys(Keys.RETURN);
-		LoginObjecten.NameProject(driver).sendKeys(NameProject);
+		LoginObjecten.NameProject(driver).sendKeys(Voorbeeld);
+		//NavigerenObjecten.SaveProject(driver).click();
+		driver.findElement(By.xpath("//button[contains(.,'Opslaan')]")).click();
 	
 		}
 	
@@ -152,7 +156,6 @@ public class Steps  {
 	
 	@When("^Sluit browser$")
 	public void Sluit_browser() throws Throwable {
-
 		
 		driver.quit();	
 		 
