@@ -142,18 +142,7 @@ public class Steps  {
 	//	NavigerenObjecten.SelectFile(driver).click();
 		Thread.sleep(1500);
 	}
-	
-	@When("^Select the Samenstellen module$")
-	public void select_the_Samenstellen_module() throws Throwable {
-
-		Thread.sleep(1500);
-		NavigerenObjecten.ClickCloud(driver).click();
-	
-		driver.findElement(By.linkText("Samenstellen")).click();
-
-		 
-	}
-	
+		
 	@When("^Sluit browser$")
 	public void Sluit_browser() throws Throwable {
 		
